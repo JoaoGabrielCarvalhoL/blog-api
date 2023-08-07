@@ -23,6 +23,7 @@ public class Comment implements Serializable {
     @Column(nullable = false)
     private String body;
     @ManyToOne
+    @JoinColumn(updatable = false)
     private Post post;
 
     public Comment() {}

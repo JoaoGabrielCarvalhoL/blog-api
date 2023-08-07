@@ -67,9 +67,11 @@ public class CommentServiceImpl implements CommentService {
     public Page<CommentGetResponse> findAll(Pageable pageable, UUID postId) {
         logger.info("Getting all comments from postId: " + postId);
         Post post = this.postService.findEntityById(postId);
+
         List<CommentGetResponse> list = this.commentRepository.findAll().stream()
                 .filter(comment -> comment.getPost().getId().equals(postId))
                 .map(commentMapper::toCommentGetResponse).toList();
+
         List<CommentGetResponse> collected = post.getComments().stream()
                 .map(commentMapper::toCommentGetResponse).toList();
         return new PageImpl<CommentGetResponse>(collected, pageable, collected.size());
