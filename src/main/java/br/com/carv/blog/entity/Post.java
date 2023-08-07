@@ -3,13 +3,19 @@ package br.com.carv.blog.entity;
 import jakarta.persistence.*;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import java.io.Serial;
+import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
 
 @Entity
 @Table(name = "tb_post")
-public class Post {
+public class Post implements Serializable {
+
+    @Serial
+    private static final long serialVersionUID = 0L;
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
@@ -21,6 +27,9 @@ public class Post {
     private String content;
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
     private LocalDateTime createdAt;
+
+    @OneToMany(mappedBy = "post", cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
+    private List<Comment> comments;
 
     public Post() {}
 
@@ -73,6 +82,14 @@ public class Post {
     @PrePersist
     private void setupCreatedAt() {
         setCreatedAt(LocalDateTime.now());
+    }
+
+    public List<Comment> getComments() {
+        return comments;
+    }
+
+    public void setComments(List<Comment> comments) {
+        this.comments = comments;
     }
 
     @Override

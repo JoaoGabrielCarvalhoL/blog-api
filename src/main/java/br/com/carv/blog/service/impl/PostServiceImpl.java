@@ -21,13 +21,11 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.UUID;
 import java.util.logging.Logger;
-import java.util.stream.Collectors;
 
 @Service
 public class PostServiceImpl implements PostService {
     private final PostRepository postRepository;
     private final Logger logger = Logger.getLogger(PostServiceImpl.class.getSimpleName());
-
     private final PostMapper postMapper;
     public PostServiceImpl(PostRepository postRepository, PostMapper postMapper) {
         this.postRepository = postRepository;
@@ -72,7 +70,8 @@ public class PostServiceImpl implements PostService {
         this.postRepository.delete(findEntityById(uuid));
     }
 
-    private Post findEntityById(UUID uuid) {
+    @Override
+    public Post findEntityById(UUID uuid) {
         return this.postRepository.findById(uuid).orElseThrow(() ->
                 new ResourceNotFoundException("Resource not found into database. Id: " + uuid));
     }
