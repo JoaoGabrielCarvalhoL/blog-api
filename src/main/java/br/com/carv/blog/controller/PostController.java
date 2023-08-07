@@ -11,11 +11,13 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.UUID;
 
 @Tag(name = "Post Endpoint", description = "Endpoint to managing posts")
+@PreAuthorize("hasRole('ADMIN')")
 public interface PostController {
 
     @PostMapping
