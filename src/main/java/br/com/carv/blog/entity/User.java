@@ -1,10 +1,12 @@
 package br.com.carv.blog.entity;
 
 import jakarta.persistence.*;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.io.Serial;
 import java.io.Serializable;
+import java.time.LocalDateTime;
 import java.util.Set;
 import java.util.UUID;
 
@@ -24,18 +26,25 @@ public class User implements Serializable {
     private String email;
     @Column(nullable = false)
     private String password;
+    @Column(nullable = false)
+    private Boolean isActive;
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
+    private LocalDateTime createdAt;
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
+    private LocalDateTime updatedAt;
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(name = "tb_users_roles",
             joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "uuid"),
             inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "uuid"))
     private Set<Role> roles;
     public User() {}
-    public User(String name, String username, String email, String password, Set<Role> roles) {
+    public User(String name, String username, String email, String password, Set<Role> roles, Boolean isActive) {
         this.name = name;
         this.username = username;
         this.email = email;
         this.password = password;
         this.roles = roles;
+        this.isActive = isActive;
     }
     public UUID getUuid() {
         return uuid;
@@ -72,5 +81,31 @@ public class User implements Serializable {
     }
     public void setRoles(Set<Role> roles) {
         this.roles = roles;
+    }
+    public Boolean getActive() {
+        return isActive;
+    }
+    public void setActive(Boolean active) {
+        isActive = active;
+    }
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+    public LocalDateTime getUpdatedAt() {
+        return updatedAt;
+    }
+    public void setUpdatedAt(LocalDateTime updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+    @PrePersist
+    public void setupCreatedAt() {
+        setCreatedAt(LocalDateTime.now());
+    }
+    @PreUpdate
+    public void setupUpdatedAt() {
+        setUpdatedAt(LocalDateTime.now());
     }
 }
