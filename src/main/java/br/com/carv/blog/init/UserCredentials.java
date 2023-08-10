@@ -23,10 +23,10 @@ public class UserCredentials implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        logger.info("Insert Batman into database.");
+        logger.info("Inserting Batman into database.");
         Set<Role> authorizations = new HashSet<>();
         authorizations.add(new Role("ADMIN"));
-        User user = new User("Bruce", "Batman", "batman@batemail.com",
+        User user = new User("Confidential", "Batman", "batman@batemail.com",
                 securityConfig.passwordEncoder().encode("BruceWayne"),
                 authorizations, true);
         this.userRepository.save(user);
