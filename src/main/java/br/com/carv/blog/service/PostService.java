@@ -1,9 +1,9 @@
 package br.com.carv.blog.service;
 
-import br.com.carv.blog.dto.request.PostPostRequest;
-import br.com.carv.blog.dto.request.PostPutRequest;
-import br.com.carv.blog.dto.response.PostGetResponse;
-import br.com.carv.blog.dto.response.PostResponse;
+import br.com.carv.blog.payload.request.PostPostRequest;
+import br.com.carv.blog.payload.request.PostPutRequest;
+import br.com.carv.blog.payload.response.PostGetResponse;
+import br.com.carv.blog.payload.response.PostResponse;
 import br.com.carv.blog.entity.Post;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

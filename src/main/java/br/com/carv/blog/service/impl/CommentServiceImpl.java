@@ -1,16 +1,15 @@
 package br.com.carv.blog.service.impl;
 
 import br.com.carv.blog.controller.impl.CommentControllerImpl;
-import br.com.carv.blog.dto.request.CommentPostRequest;
-import br.com.carv.blog.dto.request.CommentPutRequest;
-import br.com.carv.blog.dto.response.CommentGetResponse;
-import br.com.carv.blog.dto.response.CommentResponse;
+import br.com.carv.blog.payload.request.CommentPostRequest;
+import br.com.carv.blog.payload.request.CommentPutRequest;
+import br.com.carv.blog.payload.response.CommentGetResponse;
+import br.com.carv.blog.payload.response.CommentResponse;
 import br.com.carv.blog.entity.Comment;
 import br.com.carv.blog.entity.Post;
 import br.com.carv.blog.exception.ResourceNotFoundException;
 import br.com.carv.blog.mapper.CommentMapper;
 import br.com.carv.blog.repository.CommentRepository;
-import br.com.carv.blog.repository.PostRepository;
 import br.com.carv.blog.service.CommentService;
 import br.com.carv.blog.service.PostService;
 import org.springframework.data.domain.Page;
@@ -24,7 +23,6 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.UUID;
 import java.util.logging.Logger;
-import java.util.stream.Collectors;
 
 @Service
 public class CommentServiceImpl implements CommentService {

@@ -1,11 +1,10 @@
 package br.com.carv.blog.controller.impl;
 
 import br.com.carv.blog.controller.CommentController;
-import br.com.carv.blog.dto.request.CommentPostRequest;
-import br.com.carv.blog.dto.request.CommentPutRequest;
-import br.com.carv.blog.dto.response.CommentGetResponse;
-import br.com.carv.blog.dto.response.CommentResponse;
-import br.com.carv.blog.dto.response.PostGetResponse;
+import br.com.carv.blog.payload.request.CommentPostRequest;
+import br.com.carv.blog.payload.request.CommentPutRequest;
+import br.com.carv.blog.payload.response.CommentGetResponse;
+import br.com.carv.blog.payload.response.CommentResponse;
 import br.com.carv.blog.service.CommentService;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

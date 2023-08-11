@@ -1,4 +1,4 @@
-package br.com.carv.blog.dto.response;
+package br.com.carv.blog.payload.response;
 
 import java.io.Serializable;
 import java.util.UUID;

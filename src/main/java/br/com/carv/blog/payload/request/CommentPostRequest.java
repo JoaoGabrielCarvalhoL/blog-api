@@ -1,4 +1,4 @@
-package br.com.carv.blog.dto.request;
+package br.com.carv.blog.payload.request;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;

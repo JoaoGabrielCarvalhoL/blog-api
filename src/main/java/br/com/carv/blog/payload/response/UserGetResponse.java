@@ -1,7 +1,4 @@
-package br.com.carv.blog.dto.response;
-
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
+package br.com.carv.blog.payload.response;
 
 import java.io.Serializable;
 import java.util.UUID;

@@ -1,9 +1,9 @@
 package br.com.carv.blog.controller;
 
-import br.com.carv.blog.dto.request.PostPostRequest;
-import br.com.carv.blog.dto.request.PostPutRequest;
-import br.com.carv.blog.dto.response.PostGetResponse;
-import br.com.carv.blog.dto.response.PostResponse;
+import br.com.carv.blog.payload.request.PostPostRequest;
+import br.com.carv.blog.payload.request.PostPutRequest;
+import br.com.carv.blog.payload.response.PostGetResponse;
+import br.com.carv.blog.payload.response.PostResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.springframework.data.domain.Page;

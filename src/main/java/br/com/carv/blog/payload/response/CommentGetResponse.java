@@ -1,4 +1,4 @@
-package br.com.carv.blog.dto.response;
+package br.com.carv.blog.payload.response;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;

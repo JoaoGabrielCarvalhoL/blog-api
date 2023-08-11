@@ -1,8 +1,8 @@
 package br.com.carv.blog.mapper.impl;
 
-import br.com.carv.blog.dto.request.UserPostRequest;
-import br.com.carv.blog.dto.response.UserGetResponse;
-import br.com.carv.blog.dto.response.UserResponse;
+import br.com.carv.blog.payload.request.UserPostRequest;
+import br.com.carv.blog.payload.response.UserGetResponse;
+import br.com.carv.blog.payload.response.UserResponse;
 import br.com.carv.blog.entity.Role;
 import br.com.carv.blog.entity.User;
 import br.com.carv.blog.mapper.UserMapper;

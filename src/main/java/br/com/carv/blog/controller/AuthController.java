@@ -1,6 +1,7 @@
 package br.com.carv.blog.controller;
 
-import br.com.carv.blog.dto.request.LoginPostRequest;
+import br.com.carv.blog.payload.request.LoginPostRequest;
+import br.com.carv.blog.payload.response.JwtAuthorizationResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,5 +13,5 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 public interface AuthController {
     @PostMapping
     @ResponseStatus(HttpStatus.OK)
-    ResponseEntity<String> login(@RequestBody LoginPostRequest loginPostRequest);
+    ResponseEntity<JwtAuthorizationResponse> login(@RequestBody LoginPostRequest loginPostRequest);
 }

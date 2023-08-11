@@ -1,11 +1,9 @@
 package br.com.carv.blog.service;
 
-import br.com.carv.blog.dto.request.CommentPostRequest;
-import br.com.carv.blog.dto.request.CommentPutRequest;
-import br.com.carv.blog.dto.request.PostPostRequest;
-import br.com.carv.blog.dto.request.PostPutRequest;
-import br.com.carv.blog.dto.response.CommentGetResponse;
-import br.com.carv.blog.dto.response.CommentResponse;
+import br.com.carv.blog.payload.request.CommentPostRequest;
+import br.com.carv.blog.payload.request.CommentPutRequest;
+import br.com.carv.blog.payload.response.CommentGetResponse;
+import br.com.carv.blog.payload.response.CommentResponse;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.hateoas.EntityModel;

@@ -1,8 +1,8 @@
 package br.com.carv.blog.controller;
 
-import br.com.carv.blog.dto.request.UserPostRequest;
-import br.com.carv.blog.dto.response.UserGetResponse;
-import br.com.carv.blog.dto.response.UserResponse;
+import br.com.carv.blog.payload.request.UserPostRequest;
+import br.com.carv.blog.payload.response.UserGetResponse;
+import br.com.carv.blog.payload.response.UserResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.springframework.hateoas.EntityModel;

@@ -1,9 +1,9 @@
 package br.com.carv.blog.service.impl;
 
 import br.com.carv.blog.controller.impl.UserControllerImpl;
-import br.com.carv.blog.dto.request.UserPostRequest;
-import br.com.carv.blog.dto.response.UserGetResponse;
-import br.com.carv.blog.dto.response.UserResponse;
+import br.com.carv.blog.payload.request.UserPostRequest;
+import br.com.carv.blog.payload.response.UserGetResponse;
+import br.com.carv.blog.payload.response.UserResponse;
 import br.com.carv.blog.entity.User;
 import br.com.carv.blog.exception.ResourceNotFoundException;
 import br.com.carv.blog.mapper.UserMapper;

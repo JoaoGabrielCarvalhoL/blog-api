@@ -1,11 +1,7 @@
-package br.com.carv.blog.dto.response;
+package br.com.carv.blog.payload.response;
 
-import br.com.carv.blog.entity.Post;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import jakarta.persistence.Column;
-import jakarta.persistence.Lob;
-import jakarta.persistence.ManyToOne;
 
 import java.io.Serial;
 import java.io.Serializable;

@@ -1,10 +1,10 @@
 package br.com.carv.blog.service.impl;
 
 import br.com.carv.blog.controller.impl.PostControllerImpl;
-import br.com.carv.blog.dto.request.PostPostRequest;
-import br.com.carv.blog.dto.request.PostPutRequest;
-import br.com.carv.blog.dto.response.PostGetResponse;
-import br.com.carv.blog.dto.response.PostResponse;
+import br.com.carv.blog.payload.request.PostPostRequest;
+import br.com.carv.blog.payload.request.PostPutRequest;
+import br.com.carv.blog.payload.response.PostGetResponse;
+import br.com.carv.blog.payload.response.PostResponse;
 import br.com.carv.blog.entity.Post;
 import br.com.carv.blog.exception.ResourceNotFoundException;
 import br.com.carv.blog.mapper.PostMapper;
