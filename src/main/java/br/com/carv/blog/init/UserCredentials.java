@@ -25,7 +25,7 @@ public class UserCredentials implements CommandLineRunner {
     public void run(String... args) throws Exception {
         logger.info("Inserting Batman into database.");
         Set<Role> authorizations = new HashSet<>();
-        authorizations.add(new Role("ADMIN"));
+        authorizations.add(new Role("ROLE_ADMIN"));
         User user = new User("Confidential", "Batman", "batman@batemail.com",
                 securityConfig.passwordEncoder().encode("BruceWayne"),
                 authorizations, true);
